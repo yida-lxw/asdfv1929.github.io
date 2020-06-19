@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Scrapy学习系列[01] Scrapy Tutorial | asdfv1929</title>
+    <meta name="description" content="This is asdfv1929 &#39;s  blog">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="preload" href="/assets/css/0.styles.b7bc5868.css" as="style"><link rel="preload" href="/assets/js/app.806dfd1e.js" as="script"><link rel="preload" href="/assets/js/7.97edb3cd.js" as="script"><link rel="preload" href="/assets/js/35.adb4d6bc.js" as="script"><link rel="prefetch" href="/assets/js/1.a7200042.js"><link rel="prefetch" href="/assets/js/10.319aaec7.js"><link rel="prefetch" href="/assets/js/11.4bb85e64.js"><link rel="prefetch" href="/assets/js/12.aeabf8ce.js"><link rel="prefetch" href="/assets/js/13.1994c1f4.js"><link rel="prefetch" href="/assets/js/14.8d0c1330.js"><link rel="prefetch" href="/assets/js/15.e9b3d716.js"><link rel="prefetch" href="/assets/js/16.e56fbcb8.js"><link rel="prefetch" href="/assets/js/17.84ae493d.js"><link rel="prefetch" href="/assets/js/18.2e24a23c.js"><link rel="prefetch" href="/assets/js/19.a4f10f64.js"><link rel="prefetch" href="/assets/js/20.8798d2eb.js"><link rel="prefetch" href="/assets/js/21.3f4b98ee.js"><link rel="prefetch" href="/assets/js/22.7f8cc741.js"><link rel="prefetch" href="/assets/js/23.3838effa.js"><link rel="prefetch" href="/assets/js/24.95a7f706.js"><link rel="prefetch" href="/assets/js/25.9a7b8b82.js"><link rel="prefetch" href="/assets/js/26.c4136c20.js"><link rel="prefetch" href="/assets/js/27.3d7c8852.js"><link rel="prefetch" href="/assets/js/28.481d0563.js"><link rel="prefetch" href="/assets/js/29.26689871.js"><link rel="prefetch" href="/assets/js/3.123d801a.js"><link rel="prefetch" href="/assets/js/30.f05c5529.js"><link rel="prefetch" href="/assets/js/31.bf5213a0.js"><link rel="prefetch" href="/assets/js/32.d7d1f8fa.js"><link rel="prefetch" href="/assets/js/33.0c34af6b.js"><link rel="prefetch" href="/assets/js/34.d10a7934.js"><link rel="prefetch" href="/assets/js/36.58b0719b.js"><link rel="prefetch" href="/assets/js/37.08b9b138.js"><link rel="prefetch" href="/assets/js/38.4d490636.js"><link rel="prefetch" href="/assets/js/39.7917ef35.js"><link rel="prefetch" href="/assets/js/4.d52bea1e.js"><link rel="prefetch" href="/assets/js/40.91d56082.js"><link rel="prefetch" href="/assets/js/41.1618df15.js"><link rel="prefetch" href="/assets/js/42.7a8a74c9.js"><link rel="prefetch" href="/assets/js/43.438bbe30.js"><link rel="prefetch" href="/assets/js/44.27125ea0.js"><link rel="prefetch" href="/assets/js/5.6e68ab49.js"><link rel="prefetch" href="/assets/js/6.849e5b0c.js"><link rel="prefetch" href="/assets/js/8.5321f08d.js"><link rel="prefetch" href="/assets/js/9.4568eb7b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b7bc5868.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          asdfv1929
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/" class="navbar-link" data-v-e4145d0a>
+            Home
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Posts
+          </a><a href="/links/" class="navbar-link" data-v-e4145d0a>
+            Links
+          </a><a href="/about/" class="navbar-link" data-v-e4145d0a>
+            About
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Scrapy学习系列[01] Scrapy Tutorial
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      Created : 2019-07-13
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2018/07/30/swordoffer-clockprintmatrix.html" class="post-link" data-v-4e23451f>
+      Previous Post : 剑指Offer学习 顺时针打印矩阵
+    </a> <a href="/posts/2019/07/17/scrapy-02-clt.html" class="post-link" data-v-4e23451f>
+      Next Post : Scrapy学习系列[02] Command line tool
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>爬虫框架Scrapy的学习记录，主要是对官网的<a href="https://docs.scrapy.org/en/latest/" target="_blank" rel="noopener noreferrer">Scrapy 1.6 documentation<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>学习整合。
+</p> <p>关于Scrapy的介绍性文字不做多述，<br>
+以及假定诸君的OS上已经安装好相应的框架。</p> <h2 id="创建项目"><a href="#创建项目" class="header-anchor">#</a> 创建项目</h2> <p>照着文档来，这边也是在<a href="http://quotes.toscrape.com/" target="_blank" rel="noopener noreferrer">Quotes to Scrape<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>上爬取页面上的信息。<br>
+那么，首先是创建相应的Project:</p> <div class="language- extra-class"><pre class="language-text"><code>scrapy startproject tutorial
+</code></pre></div><p>这边得注意下，当前计算机上若存在多Python编译器时，比如安装了Anaconda多env情况，得记得切换到安装有Scrapy的环境下，来创建Project。</p> <p>创建好的项目结构为：</p> <div class="language- extra-class"><pre class="language-text"><code>tutorial/
+    scrapy.cfg            # deploy configuration file
+    tutorial/             # project's Python module, you'll import your code from here
+        __init__.py
+        items.py          # project items definition file
+        middlewares.py    # project middlewares file
+        pipelines.py      # project pipelines file
+        settings.py       # project settings file
+        spiders/          # a directory where you'll later put your spiders
+            __init__.py
+</code></pre></div><h2 id="构建爬虫"><a href="#构建爬虫" class="header-anchor">#</a> 构建爬虫</h2> <p>在<code>tutorial/spiders</code>文件夹下新建<code>quotes_spider.py</code>：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> scrapy
+<span class="token keyword">class</span> <span class="token class-name">QuotesSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;quotes&quot;</span>
+    <span class="token keyword">def</span> <span class="token function">start_requests</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        urls <span class="token operator">=</span> <span class="token punctuation">[</span>
+            <span class="token string">'http://quotes.toscrape.com/page/1/'</span><span class="token punctuation">,</span>
+            <span class="token string">'http://quotes.toscrape.com/page/2/'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span>
+        <span class="token keyword">for</span> url <span class="token keyword">in</span> urls<span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> scrapy<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>parse<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        page <span class="token operator">=</span> response<span class="token punctuation">.</span>url<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span>
+        filename <span class="token operator">=</span> <span class="token string">'quotes-%s.html'</span> <span class="token operator">%</span> page
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">'Saved file %s'</span> <span class="token operator">%</span> filename<span class="token punctuation">)</span>
+</code></pre></div><p>其中，<code>name</code>当前Spider的标识符，具有唯一性。<code>start_requests()</code>，需返回一组可被Spider爬取的Request，其对象由URL和回调函数构成。<code>parse()</code>就是Request对象中的回调函数，用以解析每一个Request之后的Response，简言之就是处理返回来的页面元素，将数据抽取为字典或者找到新的URL来创建对应的Request从而继续爬取信息。</p> <p>这边的<code>QuotesSpider</code>类中，<code>start_requests()</code>方法对两个url创建了两个被爬取的Request对象，并通过yield生成器进行迭代返回。<code>parse()</code>则是对Request的返回内容Response进行解析，这边就是先获得了当前页面page（1 and 2），定义html文件名，然后将response.body的内容写入两个html中，最后日志输出打印。</p> <h3 id="运行爬虫"><a href="#运行爬虫" class="header-anchor">#</a> 运行爬虫</h3> <p>接下来就是运行Spider，在tutorial project的根目录下运行如下命令，其中<code>quotes</code>就是我们前面所添加的Spider名：</p> <div class="language-python extra-class"><pre class="language-python"><code>scrapy crawl quotes
+</code></pre></div><p>Terminal上输出部分内容如下，显示两个html已保存，检查文件夹内，确实有这两文件：</p> <div class="language- extra-class"><pre class="language-text"><code>...
+2019-07-14 14:30:24 [scrapy.core.engine] INFO: Spider opened
+2019-07-14 14:30:24 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-07-14 14:30:24 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-07-14 14:30:25 [scrapy.core.engine] DEBUG: Crawled (404) &lt;GET http://quotes.toscrape.com/robots.txt&gt; (referer: None)
+2019-07-14 14:30:26 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET http://quotes.toscrape.com/page/2/&gt; (referer: None)
+2019-07-14 14:30:26 [quotes] DEBUG: Saved file quotes-2.html
+2019-07-14 14:30:27 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET http://quotes.toscrape.com/page/1/&gt; (referer: None)
+2019-07-14 14:30:27 [quotes] DEBUG: Saved file quotes-1.html
+2019-07-14 14:30:27 [scrapy.core.engine] INFO: Closing spider (finished)
+......
+2019-07-14 14:30:27 [scrapy.core.engine] INFO: Spider closed (finished)
+</code></pre></div><h3 id="简写start-requests"><a href="#简写start-requests" class="header-anchor">#</a> 简写start_requests</h3> <p><code>start_requests</code>方法的一种简写方式如下所示：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> scrapy
+<span class="token keyword">class</span> <span class="token class-name">QuotesSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;quotes&quot;</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'http://quotes.toscrape.com/page/1/'</span><span class="token punctuation">,</span>
+        <span class="token string">'http://quotes.toscrape.com/page/2/'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        page <span class="token operator">=</span> response<span class="token punctuation">.</span>url<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span>
+        filename <span class="token operator">=</span> <span class="token string">'quotes-%s.html'</span> <span class="token operator">%</span> page
+        <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>response<span class="token punctuation">.</span>body<span class="token punctuation">)</span>
+</code></pre></div><p>用<code>start_urls</code>类变量来定义URL列表，它将会被Spider中关于<code>start_requests()</code>的默认实现调用以创建对应的Requests。<code>parse()</code>方法由于是Scrapy的默认回调方法，所以可在无明确指定回调函数时自动去处理各个URL对应的request。</p> <h3 id="提取数据"><a href="#提取数据" class="header-anchor">#</a> 提取数据</h3> <p>Scrapy提供了命令行的方式对数据提取进行调试，以<code>scrapy shell</code>命令进入。
+这边可以先来看下</p> <div class="language-python extra-class"><pre class="language-python"><code>scrapy shell <span class="token string">&quot;http://quotes.toscrape.com/page/1/&quot;</span>
+</code></pre></div><p>输出：</p> <div class="language- extra-class"><pre class="language-text"><code>[··· log here ···]
+2019-07-14 17:14:18 [scrapy.core.engine] INFO: Spider opened
+2019-07-14 17:14:19 [scrapy.core.engine] DEBUG: Crawled (404) &lt;GET http://quotes.toscrape.com/robots.txt&gt; (referer: None)
+2019-07-14 17:14:19 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET http://quotes.toscrape.com/page/1/&gt; (referer: None)
+[s] Available Scrapy objects:
+[s]   scrapy     scrapy module (contains scrapy.Request, scrapy.Selector, etc)
+[s]   crawler    &lt;scrapy.crawler.Crawler object at 0x00000212DD3EAC50&gt;
+[s]   item       {}
+[s]   request    &lt;GET http://quotes.toscrape.com/page/1/&gt;
+[s]   response   &lt;200 http://quotes.toscrape.com/page/1/&gt;
+[s]   settings   &lt;scrapy.settings.Settings object at 0x00000212DFB00898&gt;
+[s]   spider     &lt;DefaultSpider 'default' at 0x212dfe0b898&gt;
+[s] Useful shortcuts:
+[s]   fetch(url[, redirect=True]) Fetch URL and update local objects (by default, redirects are followed)
+[s]   fetch(req)                  Fetch a scrapy.Request and update local objects
+[s]   shelp()           Shell help (print this help)
+[s]   view(response)    View response in a browser
+In [1]:
+</code></pre></div><p>CSS提取器</p> <div class="language- extra-class"><pre class="language-text"><code>In [1]: response.css('title')
+Out[1]: [&lt;Selector xpath='descendant-or-self::title' data='&lt;title&gt;Quotes to Scrape&lt;/title&gt;'&gt;]
+In [2]: response.css('title::text').getall()
+Out[2]: ['Quotes to Scrape']
+In [3]: response.css('title').getall()
+Out[3]: ['&lt;title&gt;Quotes to Scrape&lt;/title&gt;']
+In [4]: response.css('title::text').get()
+Out[4]: 'Quotes to Scrape'
+In [5]: response.css('title::text')[0].get()
+Out[5]: 'Quotes to Scrape'
+In [6]: response.css('title::text').re(r'Quotes.*')
+Out[6]: ['Quotes to Scrape']
+In [7]: response.css('title::text').re(r'Q\w+')
+Out[7]: ['Quotes']
+In [8]: response.css('title::text').re(r'(\w+) to (\w+)')
+Out[8]: ['Quotes', 'Scrape']
+</code></pre></div><p>XPath</p> <div class="language- extra-class"><pre class="language-text"><code>In [9]: response.xpath('//title')
+Out[9]: [&lt;Selector xpath='//title' data='&lt;title&gt;Quotes to Scrape&lt;/title&gt;'&gt;]
+In [10]: response.xpath('//title/text()').get()
+Out[10]: 'Quotes to Scrape'
+</code></pre></div><p>上面展示了关于数据提取的几个样例，下面开始对我们所需要爬取的页面进行数据提取。<br>
+原始页面上的HTML元素样例如下：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>quote<span class="token punctuation">&quot;</span></span> <span class="token attr-name">itemscope</span> <span class="token attr-name">itemtype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://schema.org/CreativeWork<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>by <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>small</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>author<span class="token punctuation">&quot;</span></span> <span class="token attr-name">itemprop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>author<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Albert Einstein<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>small</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/author/Albert-Einstein<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>(about)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tags<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            Tags:
+            &lt;meta class=&quot;keywords&quot; itemprop=&quot;keywords&quot; content=&quot;change,deep-thoughts,thinking,world&quot; /    &gt; 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tag<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/tag/change/page/1/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>change<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tag<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/tag/deep-thoughts/page/1/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>deep-thoughts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tag<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/tag/thinking/page/1/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>thinking<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>tag<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/tag/world/page/1/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>调试</p> <div class="language-python extra-class"><pre class="language-python"><code>scrapy shell <span class="token string">&quot;http://quotes.toscrape.com&quot;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>In [1]: response.css('div.quote')
+Out[1]:
+[&lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;,
+ &lt;Selector xpath=&quot;descendant-or-self::div[@class and contains(concat(' ', normalize-space(@class), ' '), ' quote ')]&quot; data='&lt;div class=&quot;quote&quot; itemscope itemtype=&quot;h'&gt;]
+In [2]: quote = response.css(&quot;div.quote&quot;)[0]
+In [3]: title = quote.css(&quot;span.text::text&quot;).get()
+In [4]: title
+Out[4]: '“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”'
+In [7]: author = quote.css(&quot;small.author::text&quot;).get()
+In [8]: author
+Out[8]: 'Albert Einstein'
+In [9]: tags = quote.css(&quot;div.tags a.tag::text&quot;).getall()
+In [10]: tags
+Out[10]: ['change', 'deep-thoughts', 'thinking', 'world']
+In [11]: for quote in response.css(&quot;div.quote&quot;):
+    ...:     text = quote.css(&quot;span.text::text&quot;).get()
+    ...:     author = quote.css(&quot;small.author::text&quot;).get()
+    ...:     tags = quote.css(&quot;div.tags a.tag::text&quot;).getall()
+    ...:     print(dict(text=text, author=author, tags=tags))
+    ...:
+{'text': '“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”', 'author': 'Albert Einstein', 'tags': ['change', 'deep-thoughts', 'thinking', 'world']}
+{'text': '“It is our choices, Harry, that show what we truly are, far more than our abilities.”', 'author': 'J.K. Rowling', 'tags': ['abilities', 'choices']}
+{'text': '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”', 'author': 'Albert Einstein', 'tags': ['inspirational', 'life', 'live', 'miracle', 'miracles']}
+{'text': '“The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.”', 'author': 'Jane Austen', 'tags': ['aliteracy', 'books', 'classic', 'humor']}
+{'text': &quot;“Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.”&quot;, 'author': 'Marilyn Monroe', 'tags': ['be-yourself', 'inspirational']}
+{'text': '“Try not to become a man of success. Rather become a man of value.”', 'author': 'Albert Einstein', 'tags': ['adulthood', 'success', 'value']}
+{'text': '“It is better to be hated for what you are than to be loved for what you are not.”', 'author': 'André Gide', 'tags': ['life', 'love']}
+{'text': &quot;“I have not failed. I've just found 10,000 ways that won't work.”&quot;, 'author': 'Thomas A. Edison', 'tags': ['edison', 'failure', 'inspirational', 'paraphrased']}
+{'text': &quot;“A woman is like a tea bag; you never know how strong it is until it's in hot water.”&quot;, 'author': 'Eleanor Roosevelt', 'tags': ['misattributed-eleanor-roosevelt']}
+{'text': '“A day without sunshine is like, you know, night.”', 'author': 'Steve Martin', 'tags': ['humor', 'obvious', 'simile']}
+</code></pre></div><h3 id="spider中提取数据"><a href="#spider中提取数据" class="header-anchor">#</a> Spider中提取数据</h3> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> scrapy
+<span class="token keyword">class</span> <span class="token class-name">QuotesSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;quotes&quot;</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'http://quotes.toscrape.com/page/1/'</span><span class="token punctuation">,</span>
+        <span class="token string">'http://quotes.toscrape.com/page/2/'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> quote <span class="token keyword">in</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'div.quote'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> <span class="token punctuation">{</span>
+                <span class="token string">'text'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'span.text::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">'author'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'small.author::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">'tags'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'div.tags a.tag::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+</code></pre></div><p>输出，这边只列了一部分：</p> <div class="language- extra-class"><pre class="language-text"><code>2019-07-14 18:44:16 [scrapy.core.scraper] DEBUG: Scraped from &lt;200 http://quotes.toscrape.com/page/2/&gt;
+{'text': '“It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.”', 'author': 'J.K. Rowling', 'tags': ['courage', 'friends']}
+2019-07-14 18:44:16 [scrapy.core.scraper] DEBUG: Scraped from &lt;200 http://quotes.toscrape.com/page/2/&gt;
+{'text': &quot;“If you can't explain it to a six year old, you don't understand it yourself.”&quot;, 'author': 'Albert Einstein', 'tags': ['simplicity', 'understand']}
+</code></pre></div><h2 id="存储数据"><a href="#存储数据" class="header-anchor">#</a> 存储数据</h2> <h3 id="json"><a href="#json" class="header-anchor">#</a> json</h3> <p>一种方式是保存到json文件上，下面的命令会生成一json文件，该文件中包含了所有爬取到的数据：</p> <div class="language- extra-class"><pre class="language-text"><code>scrapy crawl quotes -o quotes.json
+</code></pre></div><p>但由于特殊原因，Scrapy是往json文件中追加爬取到的数据信息，而不是去覆盖更新，所以若是执行上述命令两次，则会得到一个损坏的json文件。</p> <h3 id="json-lines"><a href="#json-lines" class="header-anchor">#</a> json lines</h3> <p>另一种方式是保存到json lines格式文件上。json lines是另一种json格式的定义，其将数据存储为多个对象，通过逐行读取方式来减轻内存占用压力。</p> <div class="language- extra-class"><pre class="language-text"><code>scrapy crawl quotes -o quotes.jl
+</code></pre></div><p>jl文件的部分内容为：</p> <div class="language- extra-class"><pre class="language-text"><code>······
+{&quot;text&quot;: &quot;\u201cTry not to become a man of success. Rather become a man of value.\u201d&quot;, &quot;author&quot;: &quot;Albert Einstein&quot;, &quot;tags&quot;: [&quot;adulthood&quot;, &quot;success&quot;, &quot;value&quot;]}
+{&quot;text&quot;: &quot;\u201cIt is better to be hated for what you are than to be loved for what you are not.\u201d&quot;, &quot;author&quot;: &quot;Andr\u00e9 Gide&quot;, &quot;tags&quot;: [&quot;life&quot;, &quot;love&quot;]}
+{&quot;text&quot;: &quot;\u201cI have not failed. I've just found 10,000 ways that won't work.\u201d&quot;, &quot;author&quot;: &quot;Thomas A. Edison&quot;, &quot;tags&quot;: [&quot;edison&quot;, &quot;failure&quot;, &quot;inspirational&quot;, &quot;paraphrased&quot;]}
+{&quot;text&quot;: &quot;\u201cA woman is like a tea bag; you never know how strong it is until it's in hot water.\u201d&quot;, &quot;author&quot;: &quot;Eleanor Roosevelt&quot;, &quot;tags&quot;: [&quot;misattributed-eleanor-roosevelt&quot;]}
+{&quot;text&quot;: &quot;\u201cA day without sunshine is like, you know, night.\u201d&quot;, &quot;author&quot;: &quot;Steve Martin&quot;, &quot;tags&quot;: [&quot;humor&quot;, &quot;obvious&quot;, &quot;simile&quot;]}
+</code></pre></div><p>对于小型项目来说，使用json lines的方式来保存数据已经足够；但是，若是面临较大规模的项目时，这就需要Item Pipeline了（这在创建项目时已自动生成），其在后续将会学习到。</p> <h2 id="提取下一页链接"><a href="#提取下一页链接" class="header-anchor">#</a> 提取下一页链接</h2> <p>大多数网站我们最开始都是从一级页面获得相关信息，这其中就包括了跳转到二级页面的链接，然后到二级页面继续获取所需信息。 或者是信息数据存在于多页的情况，需要访问比如几十页的网页来获得所有的数据。<br>
+在这儿，依然以<code>http://quotes.toscrape.com/</code>为例，来走一走爬取的流程。</p> <p>首先得确定自己需要获取的链接位置，就如下边页面元素所示，我们确定了<code>href</code>对应的值是我们所需要的。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pager<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>next<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/page/2/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Next <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token entity" title="&amp;rarr;">&amp;rarr;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>然后在shell上进行调试</p> <div class="language- extra-class"><pre class="language-text"><code>In [1]: response.css('li.next a').get()
+Out[1]: '&lt;a href=&quot;/page/2/&quot;&gt;Next &lt;span aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;/a&gt;'
+In [2]: response.css('li.next a::attr(href)').get()
+Out[2]: '/page/2/'
+</code></pre></div><p>最后在项目中实施</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> scrapy
+<span class="token keyword">class</span> <span class="token class-name">QuotesSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;quotes&quot;</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'http://quotes.toscrape.com/page/1/'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> quote <span class="token keyword">in</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'div.quote'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> <span class="token punctuation">{</span>
+                <span class="token string">'text'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'span.text::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">'author'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'small.author::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">'tags'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'div.tags a.tag::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+        next_page <span class="token operator">=</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'li.next a::attr(href)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> next_page <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            next_page <span class="token operator">=</span> response<span class="token punctuation">.</span>urljoin<span class="token punctuation">(</span>next_page<span class="token punctuation">)</span>
+            <span class="token keyword">yield</span> scrapy<span class="token punctuation">.</span>Request<span class="token punctuation">(</span>next_page<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>parse<span class="token punctuation">)</span>
+</code></pre></div><p><code>parse</code>方法的前半部分就是获取当前response中的数据，然后获得下一页的相对路径并保存到<code>next_page</code>变量中，之后通过<code>response.urljoin(next_page)</code>方法得到绝对路径（拼接）；最后再通过该绝对路径URL去生成一个Request对象并返回加入爬虫队列中。</p> <p>一种创建Requests的简写方式是使用<code>response.follow</code>，其可以直接使用相对路径。具体如下所示：</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> scrapy
+<span class="token keyword">class</span> <span class="token class-name">QuotesSpider</span><span class="token punctuation">(</span>scrapy<span class="token punctuation">.</span>Spider<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">&quot;quotes&quot;</span>
+    start_urls <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'http://quotes.toscrape.com/page/1/'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">parse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> quote <span class="token keyword">in</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'div.quote'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> <span class="token punctuation">{</span>
+                <span class="token string">'text'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'span.text::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">'author'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'span small::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token string">'tags'</span><span class="token punctuation">:</span> quote<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'div.tags a.tag::text'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getall<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+        next_page <span class="token operator">=</span> response<span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'li.next a::attr(href)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> next_page <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> response<span class="token punctuation">.</span>follow<span class="token punctuation">(</span>next_page<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>parse<span class="token punctuation">)</span>
+</code></pre></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      Created : 2019-07-13
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2018/07/30/swordoffer-clockprintmatrix.html" class="post-link" data-v-4e23451f>
+      Previous Post : 剑指Offer学习 顺时针打印矩阵
+    </a> <a href="/posts/2019/07/17/scrapy-02-clt.html" class="post-link" data-v-4e23451f>
+      Next Post : Scrapy学习系列[02] Command line tool
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/img/avatar.jpg" alt="asdfv1929" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      asdfv1929
+    </section> <section class="info-desc" data-v-9d847660>Hello World</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="Modu, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Modu, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          Modu, China
+        </span></span></section> <section data-v-9d847660><span title="Modu" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Modu</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          Modu
+        </span></span></section> <section data-v-9d847660><a href="mailto:asdfv1929@163.com" title="asdfv1929@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>asdfv1929@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          asdfv1929@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/asdfv1929" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: asdfv1929" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: asdfv1929</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>Table of Contents</span> <div class="post-nav-toc"><ul><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#创建项目">创建项目</a></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#构建爬虫">构建爬虫</a><ul><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#运行爬虫">运行爬虫</a></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#简写start-requests">简写start_requests</a></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#提取数据">提取数据</a></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#spider中提取数据">Spider中提取数据</a></li></ul></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#存储数据">存储数据</a><ul><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#json">json</a></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#json-lines">json lines</a></li></ul></li><li><a href="/posts/2019/07/13/scrapy-01-tutorial.html#提取下一页链接">提取下一页链接</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/posts/2019/07/13/scrapy-01-tutorial.html#post-comments">
+      Comments
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/asdfv1929" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: asdfv1929" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: asdfv1929</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <p class="footer-text" data-v-1375e54c><span data-v-1375e54c>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-1375e54c>
+      VuePress
+    </a> <span data-v-1375e54c> | </span> <a href="https://github.com/meteorlxy/vuepress-theme-meteorlxy" target="_blank" data-v-1375e54c>
+        meteorlxy
+      </a></p> <p class="footer-text" data-v-1375e54c>Copyright 2017-present <a href="https://github.com/asdfv1929" target="_blank">asdfv1929</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.806dfd1e.js" defer></script><script src="/assets/js/7.97edb3cd.js" defer></script><script src="/assets/js/35.adb4d6bc.js" defer></script>
+  </body>
+</html>
